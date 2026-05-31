@@ -86,7 +86,7 @@ export default function Dokumentasi({ projects, architectures }: Props) {
       <AnimatePresence>
         {activeDoc && arch && (
           <motion.div key="modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4" onClick={() => setActiveDoc(null)}>
-            <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-md" />
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-md" />
             <motion.div key="modal-content" initial={{ opacity: 0, y: 60, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 60, scale: 0.96 }} transition={{ duration: 0.3, ease: "easeOut" }} className="relative w-full sm:max-w-3xl max-h-[92vh] sm:max-h-[88vh] rounded-t-3xl sm:rounded-3xl glass-card overflow-hidden flex flex-col" onClick={(e) => e.stopPropagation()}>
               <div className="flex items-start justify-between gap-4 p-5 sm:p-6 border-b border-white/10 flex-shrink-0">
                 <div className="flex items-center gap-3">

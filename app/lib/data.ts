@@ -14,6 +14,7 @@ export const portfolioData: PortfolioData = {
       linkedin: "https://linkedin.com/in/alaric01",
       github: "https://github.com/alaric2001",
       gitlab: "https://gitlab.com/alaric2001ra",
+      whatsapp: "https://wa.me/+6281290482972",
     },
   },
 

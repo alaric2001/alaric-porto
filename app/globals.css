@@ -5,9 +5,44 @@
 * { box-sizing: border-box; padding: 0; margin: 0; }
 html { scroll-behavior: smooth; }
 
+/* ─── Theme tokens: dark default, light override ──────── */
+:root {
+  --bg-page: #020617;
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --bg-glass-card: rgba(15, 23, 42, 0.6);
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --text-color: #ffffff;
+}
+html:not(.dark) {
+  --bg-page: #f8fafc;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-glass-card: rgba(255, 255, 255, 0.9);
+  --border: rgba(0, 0, 0, 0.1);
+  --shadow: rgba(0, 0, 0, 0.12);
+  --text-color: #0f172a;
+}
+body {
+  background-color: var(--bg-page);
+  color: var(--text-color);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
 @layer utilities {
-  .glass { @apply backdrop-blur-md bg-white/5 border border-white/10; }
-  .glass-card { @apply backdrop-blur-md bg-slate-900/60 border border-white/10 rounded-2xl shadow-2xl; }
+  .glass {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+  }
+  .glass-card {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    background: var(--bg-glass-card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px var(--shadow);
+  }
   .gradient-text { @apply bg-gradient-to-r from-blue-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent; }
   .glow-blue { box-shadow: 0 0 30px rgba(59,130,246,0.3); }
   .bg-mesh {
@@ -24,6 +59,46 @@ html { scroll-behavior: smooth; }
   .badge-orange { @apply badge bg-orange-500/15 text-orange-300 border border-orange-500/25; }
   .custom-scrollbar::-webkit-scrollbar { width: 4px; }
   .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-  .custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-white/20 rounded-full; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 9999px; }
   .terminal-text { @apply font-mono text-sm text-emerald-400; }
+}
+
+/* ─── Light mode overrides ────────────────────────────── */
+/* Text: make dark-only colors readable on light bg */
+html:not(.dark) .text-white          { color: #0f172a; }
+html:not(.dark) .text-white\/60      { color: rgba(15, 23, 42, 0.5); }
+html:not(.dark) .text-slate-300      { color: #475569; }
+html:not(.dark) .text-slate-400      { color: #475569; }
+html:not(.dark) .hover\:text-white:hover { color: #0f172a; }
+
+/* Preserve white text on gradient backgrounds */
+html:not(.dark) .bg-gradient-to-r.text-white,
+html:not(.dark) .bg-gradient-to-br.text-white  { color: #ffffff; }
+html:not(.dark) .bg-gradient-to-r .text-white,
+html:not(.dark) .bg-gradient-to-br .text-white { color: #ffffff; }
+
+/* Solid backgrounds */
+html:not(.dark) .bg-slate-950        { background-color: #f8fafc; }
+html:not(.dark) .bg-slate-900        { background-color: #f1f5f9; }
+html:not(.dark) .bg-slate-800        { background-color: #e2e8f0; }
+html:not(.dark) .bg-slate-950\/80    { background-color: rgba(248, 250, 252, 0.92); }
+html:not(.dark) .bg-slate-950\/60    { background-color: rgba(0, 0, 0, 0.2); }
+html:not(.dark) .bg-white\/5         { background-color: rgba(15, 23, 42, 0.04); }
+html:not(.dark) .bg-white\/8         { background-color: rgba(15, 23, 42, 0.06); }
+html:not(.dark) .bg-white\/10        { background-color: rgba(15, 23, 42, 0.08); }
+
+/* Hover backgrounds */
+html:not(.dark) .hover\:bg-white\/5:hover  { background-color: rgba(15, 23, 42, 0.05); }
+html:not(.dark) .hover\:bg-white\/10:hover { background-color: rgba(15, 23, 42, 0.08); }
+
+/* Borders */
+html:not(.dark) .border-white\/5    { border-color: #e2e8f0; }
+html:not(.dark) .border-white\/10   { border-color: #e2e8f0; }
+html:not(.dark) .border-slate-700   { border-color: #cbd5e1; }
+html:not(.dark) .border-slate-800   { border-color: #e2e8f0; }
+
+/* Section dividers */
+html:not(.dark) .via-white\/10 {
+  --tw-gradient-via: rgb(15 23 42 / 0.12);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to);
 }

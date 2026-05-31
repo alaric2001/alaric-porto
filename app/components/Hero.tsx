@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, Github, Gitlab, MapPin, Download } from "lucide-react";
+import { Mail, MessageCircle, Linkedin, Github, Gitlab, MapPin, Download } from "lucide-react";
 import type { Profile } from "@/app/types";
 import { useLang } from "./LangProvider";
 
@@ -54,7 +54,7 @@ export default function Hero({ profile }: { profile: Profile }) {
               { icon: Github, label: "GitHub", href: profile.links.github, color: "hover:text-white" },
               { icon: Gitlab, label: "GitLab", href: profile.links.gitlab, color: "hover:text-orange-400" },
               { icon: Mail, label: profile.email, href: `mailto:${profile.email}`, color: "hover:text-emerald-400" },
-              { icon: Phone, label: profile.phone, href: `tel:${profile.phone}`, color: "hover:text-cyan-400" },
+              { icon: MessageCircle, label: "WhatsApp", href: profile.links.whatsapp, color: "hover:text-green-400" },
             ].map(({ icon: Icon, label, href, color }) => (
               <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined} className={`flex items-center gap-2 px-3 py-2 rounded-xl glass border border-white/10 text-slate-400 text-xs ${color} transition-all duration-200 hover:bg-white/5 hover:border-white/20`}>
                 <Icon size={13} />

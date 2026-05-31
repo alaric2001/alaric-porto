@@ -5,7 +5,7 @@ export interface Profile {
   email: string;
   summary: string;
   summaryEn: string;
-  links: { linkedin: string; github: string; gitlab: string };
+  links: { linkedin: string; github: string; gitlab: string; whatsapp: string };
 }
 
 export interface SkillGroup {

@@ -14,7 +14,7 @@ export default async function HomePage() {
   const data = portfolioData;
 
   return (
-    <div className="relative min-h-screen bg-[#020617] bg-mesh overflow-x-hidden">
+    <div className="relative min-h-screen dark:bg-[#020617] bg-mesh overflow-x-hidden">
       <Navbar />
       <main>
         <Hero profile={data.profile} />
