@@ -1,0 +1,146 @@
+{
+  "profile": {
+    "name": "ALARIC RASENDRIYA ANIKO",
+    "location": "Kabupaten Bogor, Jawa Barat",
+    "phone": "+6281290482972",
+    "email": "alaric2001ra@gmail.com",
+    "links": {
+      "linkedin": "https://linkedin.com/in/alaric01",
+      "github": "https://github.com/alaric2001",
+      "gitlab": "https://gitlab.com/alaric2001ra"
+    },
+    "summary": "Fullstack Developer adaptif dengan latar belakang pendidikan S2 Sistem Informasi. Memiliki keahlian mendalam dalam pengembangan aplikasi web dan mobile menggunakan ekosistem JavaScript (React.js, Node.js) dan PHP (Laravel). Berpengalaman dalam membangun solusi digital mulai dari platform e-commerce hingga dashboard monitoring kesehatan berskala riset universitas."
+  },
+  "skills": {
+    "languages": ["JavaScript", "PHP", "Python"],
+    "frontend": ["React.js", "React Native", "Progressive Web App (PWA)", "Tailwind CSS", "HTML", "CSS"],
+    "backend": ["Laravel", "Express.js", "Node.js", "RESTful API"],
+    "tools": ["Claude Code", "Git/GitHub", "AWS (API Gateway, Lambda Function, CloudWatch, EC2/Lightsail)", "Cpanel", "MySQL"]
+  },
+  "experience": [
+    {
+      "role": "Asisten Dosen & Asisten Praktikum",
+      "institution": "Telkom University",
+      "location": "Bandung, Jawa Barat",
+      "period": "Maret 2025 - Juni 2025",
+      "bullets": [
+        "Membimbing mahasiswa dalam implementasi teknis pengembangan aplikasi menggunakan framework Laravel.",
+        "Meningkatkan kapabilitas manajemen proyek mahasiswa menggunakan Jira untuk alur kerja yang terorganisir.",
+        "Memastikan seluruh siklus pengembangan perangkat lunak mahasiswa berjalan sesuai standar industri."
+      ]
+    },
+    {
+      "role": "Full-stack Developer Intern",
+      "institution": "PT Meta Mata Indonesia",
+      "location": "Kebayoran Lama, Jakarta Selatan",
+      "period": "Juli 2022 - Oktober 2022",
+      "bullets": [
+        "Berkontribusi dalam pengembangan fitur aplikasi web menggunakan stack Full-stack untuk menyokong bisnis operasional.",
+        "Bekerja sama dalam tim pengembang untuk optimasi performa kode dan proses debugging sistem.",
+        "Mengintegrasikan komponen API frontend dengan database backend demi sinkronisasi alur data."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "FlowBeat (Sistem Pemantauan BPM & SpO2 Lansia)",
+      "role": "Fullstack Mobile Developer",
+      "period": "Januari 2025 - November 2025",
+      "bullets": [
+        "Membangun sistem pemantauan kesehatan real-time untuk mengukur detak jantung (BPM) dan kadar oksigen (SpO2) lansia.",
+        "Mengembangkan aplikasi mobile dengan React Native dan sistem manajemen data backend berbasis Express.js.",
+        "Melakukan analisis sistem dan evaluasi kegunaan lewat metode System Usability Scale (SUS) demi akurasi visualisasi data."
+      ],
+      "showcaseUrl": "https://12quu3tnw6.execute-api.ap-southeast-1.amazonaws.com/"
+    },
+    {
+      "title": "Seteguk Kopi (E-Commerce & PWA)",
+      "role": "Lead Fullstack Developer",
+      "period": "Februari 2024 - September 2025",
+      "bullets": [
+        "Membangun platform penjualan kopi berbasis Laravel terintegrasi fitur Progressive Web App (PWA) untuk perangkat mobile.",
+        "Mengembangkan alur pemesanan end-to-end yang mengakomodasi transaksi pengguna secara real-time."
+      ],
+      "showcaseUrl": "https://alaric2001.github.io/deploykopi/"
+    },
+    {
+      "title": "Dashboard Monitoring Pasien Covid-19",
+      "role": "Front-end Developer (Research Project)",
+      "period": "Agustus 2023 - September 2023",
+      "bullets": [
+        "Mengembangkan antarmuka dashboard pemantauan pasien rawat inap rumah sakit mengandalkan React.js.",
+        "Memvisualisasikan kumpulan data medis yang kompleks ke dalam komponen UI intuitif bagi tenaga kesehatan."
+      ],
+      "showcaseUrl": "https://dashboard-monitoring-covid.vercel.app/"
+    }
+  ],
+  "publications": [
+    {
+      "title": "User Experience Development in Elderly Heart Patient Monitoring System",
+      "publisher": "Jurnal Nasional Teknik Elektro dan Teknologi Informasi",
+      "year": "2025",
+      "index": "Jurnal Nasional - Sinta 2"
+    },
+    {
+      "title": "A Systematic Review of Smart Grid Information Systems for Integrating Renewable Energy in Urban Environments",
+      "publisher": "2025 International Electronics Symposium (IES)",
+      "year": "2025",
+      "index": "Prosiding Internasional - Scopus-indexed IEEE"
+    },
+    {
+      "title": "Examining the Role of Fintech Adoption in Driving Growth and Innovation in the Halal Economy: A Systematic Review",
+      "publisher": "2024 International Conference on ICT for Smart Society (ICISS)",
+      "year": "2024",
+      "index": "Prosiding Internasional - Scopus-indexed IEEE"
+    },
+    {
+      "title": "Application of User Experience Method to Determine User Requirements in Remote Patient Monitoring Systems: Systematic Literature Review",
+      "publisher": "2024 International Conference on ICT for Smart Society (ICISS)",
+      "year": "2024",
+      "index": "Prosiding Internasional - Scopus-indexed IEEE"
+    },
+    {
+      "title": "Use of the Usability Scale System as a Monitoring Dashboard Test for Inpatient Covid-19 Patients in Hospitals",
+      "publisher": "2024 3rd International Conference for Innovation in Technology (INOCON)",
+      "year": "2024",
+      "index": "Prosiding Internasional - Scopus-indexed IEEE"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Code Generation and Optimization Using IBM Granite",
+      "issuer": "IBM SkillsBuild",
+      "date": "Agustus 2025",
+      "description": "Validasi keahlian tingkat lanjut dalam optimasi performa arsitektur kode dan otomatisasi siklus rekayasa perangkat lunak memanfaatkan model Generative AI IBM Granite.",
+      "url": "https://drive.google.com/drive/u/1/folders/1cF vU6buQV8wLu8hd SB ecxSDPbEOA"
+    },
+    {
+      "title": "React Js Web Frontend",
+      "issuer": "Sanbercode Bootcamp",
+      "date": "Februari 2023",
+      "description": "Pelatihan intensif pengembangan aplikasi SPA modern yang mencakup ekosistem React Hooks, manajemen state, interseptor REST API dengan Axios, serta deployment produksi.",
+      "url": "https://drive.google.com/drive/u/1/folders/1cF vU6buQV8wLu8hd SB ecxSDPbEOA"
+    },
+    {
+      "title": "Web Developer",
+      "issuer": "BNSP / Lembaga Sertifikasi Profesi",
+      "date": "Desember 2022",
+      "description": "Sertifikasi kompetensi resmi skala nasional yang menyatakan kemahiran dalam rekayasa perangkat lunak web dan standarisasi penulisan komponen database.",
+      "url": "https://drive.google.com/drive/u/1/folders/1cF vU6buQV8wLu8hd SB ecxSDPbEOA"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Magister (S2) Sistem Informasi",
+      "campus": "Telkom University, Bandung",
+      "gpa": "3.61/4.00",
+      "period": "2023 - 2026"
+    },
+    {
+      "degree": "Sarjana (S1) Sistem Informasi",
+      "campus": "Telkom University, Bandung",
+      "gpa": "3.56/4.00",
+      "period": "2019 - 2023"
+    }
+  ]
+}

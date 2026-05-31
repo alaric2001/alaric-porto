@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alaric Rasendriya Aniko | Fullstack Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            accent: '#3b82f6',
+                            muted: '#64748b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans" x-data="portfolioApp()">
+
+    <header class="bg-brand-dark text-white py-20 px-6 border-b border-slate-800">
+        <div class="max-w-4xl mx-auto text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" x-text="data.profile.name"></h1>
+            <p class="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-4" x-text="data.profile.location"></p>
+            <p class="text-lg text-slate-300 leading-relaxed max-w-2xl mb-8" x-text="data.profile.summary"></p>
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                <a :href="data.profile.links.linkedin" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium transition">LinkedIn</a>
+                <a :href="data.profile.links.github" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium transition">GitHub</a>
+                <a :href="data.profile.links.gitlab" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded text-sm font-medium transition">GitLab</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
+        
+        <section>
+            <h2 class="text-2xl font-bold border-b border-slate-200 pb-3 mb-6">Work Experience</h2>
+            <div class="space-y-8">
+                <template x-for="exp in data.experience">
+                    <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between mb-3">
+                            <div>
+                                <h3 class="text-lg font-bold text-brand-dark" x-text="exp.role"></h3>
+                                <p class="text-sm font-medium text-brand-accent" x-text="exp.institution + ' — ' + exp.location"></p>
+                            </div>
+                            <span class="text-xs font-semibold text-brand-muted mt-1 md:mt-0" x-text="exp.period"></span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-1 text-sm text-slate-600">
+                            <template x-for="bullet in exp.bullets">
+                                <li x-text="bullet"></li>
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold border-b border-slate-200 pb-3 mb-6">Projects Showcase</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <template x-for="proj in data.projects">
+                    <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-brand-dark text-lg" x-text="proj.title"></h3>
+                            </div>
+                            <p class="text-xs font-bold text-brand-accent mb-3" x-text="proj.role + ' | ' + proj.period"></p>
+                            <ul class="list-disc list-inside space-y-1 text-xs text-slate-600 mb-6">
+                                <template x-for="bullet in proj.bullets">
+                                    <li x-text="bullet"></li>
+                                </template>
+                            </ul>
+                        </div>
+                        <a :href="proj.showcaseUrl" target="_blank" class="inline-flex items-center text-xs font-bold text-brand-accent hover:underline">
+                            Lihat Live Demo 
+                            <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold border-b border-slate-200 pb-3 mb-6">Scientific Publications</h2>
+            <div class="bg-white rounded-lg border border-slate-200 shadow-sm divide-y divide-slate-100">
+                <template x-for="pub in data.publications">
+                    <div class="p-4 hover:bg-slate-50 transition">
+                        <span class="inline-block bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-0.5 rounded mb-2" x-text="pub.index"></span>
+                        <h3 class="text-sm font-semibold text-brand-dark leading-snug" x-text="pub.title"></h3>
+                        <p class="text-xs text-brand-muted mt-1" x-text="pub.publisher + ' (' + pub.year + ')'"></p>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold border-b border-slate-200 pb-3 mb-6">Certifications</h2>
+            <div class="space-y-4">
+                <template x-for="cert in data.certifications">
+                    <div class="p-5 bg-white border border-slate-200 rounded-lg shadow-sm">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-sm font-bold text-brand-dark" x-text="cert.title"></h3>
+                            <span class="text-xs text-brand-muted font-medium" x-text="cert.date"></span>
+                        </div>
+                        <p class="text-xs text-brand-accent font-semibold mb-2" x-text="cert.issuer"></p>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-3" x-text="cert.description"></p>
+                        <a :href="cert.url" target="_blank" class="text-xs font-semibold text-slate-500 hover:text-brand-accent underline">Verifikasi Kredensial</a>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold border-b border-slate-200 pb-3 mb-6">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <template x-for="edu in data.education">
+                    <div class="bg-white p-5 border border-slate-200 rounded-lg shadow-sm">
+                        <span class="text-xs font-bold text-brand-accent" x-text="edu.period"></span>
+                        <h3 class="text-sm font-bold text-brand-dark mt-1" x-text="edu.degree"></h3>
+                        <p class="text-xs text-slate-600" x-text="edu.campus"></p>
+                        <p class="text-xs font-semibold text-slate-500 mt-2" x-text="'IPK: ' + edu.gpa"></p>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 text-center py-8 px-6 text-xs border-t border-slate-800">
+        <p>Made with 💙 by Alaric</p>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-40 md:bottom-8 md:right-8">
+        <button @click="isModalOpen = true" class="bg-brand-accent hover:bg-blue-600 text-white font-bold text-xs md:text-sm px-4 py-3 rounded-full shadow-xl flex items-center gap-2 border border-blue-400 transition transform hover:scale-105">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            Dokumentasi Projek
+        </button>
+    </div>
+
+    <div x-show="isModalOpen" class="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-slate-950/80" x-transition x-cloak>
+        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto border border-slate-200" @click.away="isModalOpen = false">
+            
+            <div class="bg-brand-dark text-white p-6 sticky top-0 flex justify-between items-center">
+                <div>
+                    <h3 class="text-lg font-bold">Technical Arsitektur Projek Utama</h3>
+                    <p class="text-xs text-slate-400">Arsitektur & Alur Solusi Sistem IoT FlowBeat</p>
+                </div>
+                <button @click="isModalOpen = false" class="text-slate-400 hover:text-white text-xl font-bold">&times;</button>
+            </div>
+
+            <div class="p-6 space-y-6 text-sm text-slate-700 leading-relaxed">
+                <div>
+                    <h4 class="font-bold text-brand-dark mb-2 text-base">1. Stack Teknologi</h4>
+                    <p class="text-xs text-slate-600 mb-2">Sistem dibangun penuh menggunakan teknologi modern terintegrasi:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-100 text-slate-800 text-xs px-2.5 py-1 rounded font-medium border border-slate-200">React Native</span>
+                        <span class="bg-slate-100 text-slate-800 text-xs px-2.5 py-1 rounded font-medium border border-slate-200">Express.js (Node.js)</span>
+                        <span class="bg-slate-100 text-slate-800 text-xs px-2.5 py-1 rounded font-medium border border-slate-200">AWS Cloud Ecosystem</span>
+                        <span class="bg-slate-100 text-slate-800 text-xs px-2.5 py-1 rounded font-medium border border-slate-200">MySQL Backend</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-brand-dark mb-2 text-base">2. Alur Transmisi Data Pintar</h4>
+                    <p class="text-xs text-slate-600">Bagaimana data kesehatan pasien mengalir di dalam sistem:</p>
+                    <ol class="list-decimal list-inside space-y-2 text-xs text-slate-600 mt-2 bg-slate-50 p-3 rounded border border-slate-200">
+                        <li><strong>Sensor IoT Hardware:</strong> Membaca detak jantung (BPM) dan SpO2 dari tubuh pasien lansia.</li>
+                        <li><strong>API Gateway & Lambda Gateway:</strong> Mengamankan serta meneruskan beban data (*payload*) enkripsi ke server database.</li>
+                        <li><strong>ExpressJS Router:</strong> Mengelola logika pengolahan data *time-series* dan validasi autentikasi token.</li>
+                        <li><strong>React Native UI:</strong> Melakukan visualisasi grafik kesehatan interaktif untuk dianalisis oleh tenaga kesehatan secara presisi.</li>
+                    </ol>
+                </div>
+
+                <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                    <h4 class="font-bold text-blue-900 mb-1 text-sm">Catatan Pengembang</h4>
+                    <p class="text-xs text-blue-800 leading-relaxed">Website portofolio ini menerapkan arsitektur *clean code*. Semua komponen antarmuka dirender secara dinamis memanfaatkan objek JSON statis untuk menjamin kecepatan pemuatan situs yang optimal di perangkat seluler.</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex justify-end">
+                <button @click="isModalOpen = false" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold text-xs px-4 py-2 rounded transition">Tutup Dokumentasi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function portfolioApp() {
+            return {
+                isModalOpen: false,
+                // Data disuntikkan secara dinamis di bawah ini
+                data: {
+                    profile: {
+                        name: "ALARIC RASENDRIYA ANIKO",
+                        location: "Kabupaten Bogor, Jawa Barat",
+                        summary: "Fullstack Developer adaptif dengan latar belakang pendidikan S2 Sistem Informasi. Memiliki keahlian mendalam dalam pengembangan aplikasi web dan mobile menggunakan ekosistem JavaScript (React.js, Node.js) dan PHP (Laravel). Berpengalaman dalam membangun solusi digital mulai dari platform e-commerce hingga dashboard monitoring kesehatan berskala riset universitas.",
+                        links: {
+                            linkedin: "https://linkedin.com/in/alaric01",
+                            github: "https://github.com/alaric2001",
+                            gitlab: "https://gitlab.com/alaric2001ra"
+                        }
+                    },
+                    experience: [
+                        {
+                            role: "Asisten Dosen & Asisten Praktikum",
+                            institution: "Telkom University",
+                            location: "Bandung, Jawa Barat",
+                            period: "Maret 2025 - Juni 2025",
+                            bullets: [
+                                "Membimbing mahasiswa dalam implementasi teknis pengembangan aplikasi menggunakan framework Laravel.",
+                                "Mengarahkan mahasiswa dalam manajemen proyek perangkat lunak menggunakan perangkat Jira untuk memastikan alur kerja yang terorganisir.",
+                                "Memastikan seluruh siklus pengembangan perangkat lunak yang dikerjakan mahasiswa berjalan sesuai dengan standar industri."
+                            ]
+                        },
+                        {
+                            role: "Full-stack Developer Intern",
+                            institution: "PT Meta Mata Indonesia",
+                            location: "Kebayoran Lama, Jakarta Selatan",
+                            period: "Juli 2022 - Oktober 2022",
+                            bullets: [
+                                "Berkontribusi dalam pengembangan fitur aplikasi web menggunakan stack Full-stack untuk mendukung operasional bisnis perusahaan.",
+                                "Bekerja sama dengan tim pengembang untuk melakukan debugging dan optimasi performa kode.",
+                                "Mengintegrasikan API frontend dengan database backend untuk memastikan alur data yang sinkron."
+                            ]
+                        }
+                    ],
+                    projects: [
+                        {
+                            title: "FlowBeat (Sistem Pemantauan BPM & SpO2 Lansia)",
+                            role: "Fullstack Mobile Developer",
+                            period: "Januari 2025 - November 2025",
+                            bullets: [
+                                "Membangun sistem pemantauan kesehatan real-time untuk mengukur detak jantung (BPM) dan kadar oksigen (SpO2) bagi pasien lansia.",
+                                "Mengembangkan aplikasi menggunakan stack teknologi React Native untuk antarmuka pengguna di perangkat mobile dan Express.js untuk manajemen data di sisi backend.",
+                                "Melakukan analisis sistem dan pengujian kegunaan (System Usability Scale) untuk memastikan akurasi data kesehatan yang ditampilkan bagi pengguna."
+                            ],
+                            showcaseUrl: "https://12quu3tnw6.execute-api.ap-southeast-1.amazonaws.com/"
+                        },
+                        {
+                            title: "Seteguk Kopi (E-Commerce & PWA)",
+                            role: "Lead Fullstack Developer",
+                            period: "Februari 2024 - September 2025",
+                            bullets: [
+                                "Membangun platform penjualan kopi berbasis Laravel dengan fitur Progressive Web App (PWA) untuk meningkatkan aksesibilitas pengguna di perangkat mobile.",
+                                "Mengembangkan sistem pemesanan end-to-end yang memungkinkan pengguna memesan secara real-time."
+                            ],
+                            showcaseUrl: "https://alaric2001.github.io/deploykopi/"
+                        },
+                        {
+                            title: "Dashboard Monitoring Pasien Covid-19",
+                            role: "Front-end Developer (Research Project)",
+                            period: "Agustus 2023 - September 2023",
+                            bullets: [
+                                "Mengembangkan antarmuka dashboard monitoring untuk pasien rawat inap rumah sakit menggunakan React.js.",
+                                "Memvisualisasikan data medis yang kompleks ke dalam komponen UI yang intuitif untuk membantu tenaga medis dalam pemantauan pasien."
+                            ],
+                            showcaseUrl: "https://dashboard-monitoring-covid.vercel.app/"
+                        }
+                    ],
+                    publications: [
+                        {
+                            title: "User Experience Development in Elderly Heart Patient Monitoring System",
+                            publisher: "Jurnal Nasional Teknik Elektro dan Teknologi Informasi",
+                            year: "2025",
+                            index: "Jurnal Nasional - Sinta 2"
+                        },
+                        {
+                            title: "A Systematic Review of Smart Grid Information Systems for Integrating Renewable Energy in Urban Environments",
+                            publisher: "2025 International Electronics Symposium (IES)",
+                            year: "2025",
+                            index: "Prosiding Internasional - Scopus IEEE"
+                        },
+                        {
+                            title: "Examining the Role of Fintech Adoption in Driving Growth and Innovation in the Halal Economy: A Systematic Review",
+                            publisher: "2024 International Conference on ICT for Smart Society (ICISS)",
+                            year: "2024",
+                            index: "Prosiding Internasional - Scopus IEEE"
+                        },
+                        {
+                            title: "Application of User Experience Method to Determine User Requirements in Remote Patient Monitoring Systems: Systematic Literature Review",
+                            publisher: "2024 International Conference on ICT for Smart Society (ICISS)",
+                            year: "2024",
+                            index: "Prosiding Internasional - Scopus IEEE"
+                        },
+                        {
+                            title: "Use of the Usability Scale System as a Monitoring Dashboard Test for Inpatient Covid-19 Patients in Hospitals",
+                            publisher: "2024 3rd International Conference for Innovation in Technology (INOCON)",
+                            year: "2024",
+                            index: "Prosiding Internasional - Scopus IEEE"
+                        }
+                    ],
+                    certifications: [
+                        {
+                            title: "Code Generation and Optimization Using IBM Granite",
+                            issuer: "IBM SkillsBuild",
+                            date: "Agustus 2025",
+                            description: "Mempelajari implementasi model AI IBM Granite untuk otomatisasi pembuatan kode program dan menguasai teknik optimasi kode guna meningkatkan performa aplikasi.",
+                            url: "https://drive.google.com/drive/u/1/folders/1cF vU6buQV8wLu8hd SB ecxSDPbEOA"
+                        },
+                        {
+                            title: "React Js Web Frontend",
+                            issuer: "Sanbercode Bootcamp",
+                            date: "Februari 2023",
+                            description: "Pengembangan aplikasi web frontend modern menggunakan React JS, mencakup penguasaan ES6, REST API dengan Axios, React Hooks, State Management, dan deployment.",
+                            url: "https://drive.google.com/drive/u/1/folders/1cF vU6buQV8wLu8hd SB ecxSDPbEOA"
+                        },
+                        {
+                            title: "Web Developer",
+                            issuer: "BNSP / Lembaga Sertifikasi Profesi",
+                            date: "Desember 2022",
+                            description: "Sertifikasi resmi kompetensi nasional untuk bidang Web Development yang memvalidasi standar industri penulisan kode program.",
+                            url: "https://drive.google.com/drive/u/1/folders/1cF vU6buQV8wLu8hd SB ecxSDPbEOA"
+                        }
+                    ],
+                    education: [
+                        {
+                            degree: "Magister (S2) Sistem Informasi",
+                            campus: "Telkom University, Bandung",
+                            gpa: "3.61/4.00",
+                            period: "2023 - 2026"
+                        },
+                        {
+                            degree: "Sarjana (S1) Sistem Informasi",
+                            campus: "Telkom University, Bandung",
+                            gpa: "3.56/4.00",
+                            period: "2019 - 2023"
+                        }
+                    ]
+                }
+            }
+        }
+    </script>
+</body>
+</html>

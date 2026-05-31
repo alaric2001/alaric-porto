@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; padding: 0; margin: 0; }
+html { scroll-behavior: smooth; }
+
+@layer utilities {
+  .glass { @apply backdrop-blur-md bg-white/5 border border-white/10; }
+  .glass-card { @apply backdrop-blur-md bg-slate-900/60 border border-white/10 rounded-2xl shadow-2xl; }
+  .gradient-text { @apply bg-gradient-to-r from-blue-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent; }
+  .glow-blue { box-shadow: 0 0 30px rgba(59,130,246,0.3); }
+  .bg-mesh {
+    background-image:
+      radial-gradient(at 40% 20%, hsla(228,100%,74%,0.07) 0, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(270,100%,76%,0.07) 0, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(208,100%,76%,0.07) 0, transparent 50%);
+  }
+  .section-padding { @apply py-20 px-4 sm:px-6 lg:px-8; }
+  .badge { @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium; }
+  .badge-blue { @apply badge bg-blue-500/15 text-blue-300 border border-blue-500/25; }
+  .badge-violet { @apply badge bg-violet-500/15 text-violet-300 border border-violet-500/25; }
+  .badge-green { @apply badge bg-emerald-500/15 text-emerald-300 border border-emerald-500/25; }
+  .badge-orange { @apply badge bg-orange-500/15 text-orange-300 border border-orange-500/25; }
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-white/20 rounded-full; }
+  .terminal-text { @apply font-mono text-sm text-emerald-400; }
+}
