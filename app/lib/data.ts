@@ -43,6 +43,7 @@ export const portfolioData: PortfolioData = {
       icon: "Cloud",
       items: [
         "AWS (EC2, Lambda, API Gateway, CloudWatch)",
+        "Google Cloud (Run API, Build API)",
         "Claude Code",
         "Git / GitHub / GitLab",
         "MySQL",

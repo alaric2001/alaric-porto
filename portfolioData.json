@@ -12,10 +12,33 @@
     "summary": "Fullstack Developer adaptif dengan latar belakang pendidikan S2 Sistem Informasi. Memiliki keahlian mendalam dalam pengembangan aplikasi web dan mobile menggunakan ekosistem JavaScript (React.js, Node.js) dan PHP (Laravel). Berpengalaman dalam membangun solusi digital mulai dari platform e-commerce hingga dashboard monitoring kesehatan berskala riset universitas."
   },
   "skills": {
-    "languages": ["JavaScript", "PHP", "Python"],
-    "frontend": ["React.js", "React Native", "Progressive Web App (PWA)", "Tailwind CSS", "HTML", "CSS"],
-    "backend": ["Laravel", "Express.js", "Node.js", "RESTful API"],
-    "tools": ["Claude Code", "Git/GitHub", "AWS (API Gateway, Lambda Function, CloudWatch, EC2/Lightsail)", "Cpanel", "MySQL"]
+    "languages": [
+      "JavaScript",
+      "PHP",
+      "Python"
+    ],
+    "frontend": [
+      "React.js",
+      "React Native",
+      "Progressive Web App (PWA)",
+      "Tailwind CSS",
+      "HTML",
+      "CSS"
+    ],
+    "backend": [
+      "Laravel",
+      "Express.js",
+      "Node.js",
+      "RESTful API"
+    ],
+    "tools": [
+      "Claude Code",
+      "Git/GitHub",
+      "AWS (API Gateway, Lambda Function, CloudWatch, EC2/Lightsail)",
+      "Google Cloud (Run API, Build API)",
+      "Cpanel",
+      "MySQL"
+    ]
   },
   "experience": [
     {
