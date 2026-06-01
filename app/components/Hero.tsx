@@ -18,12 +18,11 @@ export default function Hero({ profile }: { profile: Profile }) {
 
       <div className="relative z-10 flex-1 flex items-center justify-center w-full">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center w-full">
-          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/10 mb-8 text-sm text-slate-300">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="inline-flex mb-8">
+            <span className="flex items-center gap-1.5 px-3 py-2 rounded-xl glass border border-white/10 text-slate-500 text-xs">
+              <MapPin size={13} />
+              <span>{profile.location}</span>
             </span>
-            {t("hero", "badge")} · {profile.location}
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
@@ -43,7 +42,7 @@ export default function Hero({ profile }: { profile: Profile }) {
             <a href={`mailto:${profile.email}`} className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white text-sm font-medium hover:from-blue-500 hover:to-violet-500 transition-all duration-200 shadow-lg shadow-blue-500/20 glow-blue">
               <Mail size={15} /> {t("hero", "contactBtn")}
             </a>
-            <a href="https://drive.google.com/drive/u/1/folders/1cF__vU6buQV8wLu8hd_SB_ecxSDPbEOA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl glass border border-white/15 text-slate-300 text-sm font-medium hover:bg-white/10 hover:text-white transition-all duration-200">
+            <a href="https://drive.google.com/file/d/1r7DK1MKIOm-399PDCbRMwGvA31kBs4Xm/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl glass border border-white/15 text-slate-300 text-sm font-medium hover:bg-white/10 hover:text-white transition-all duration-200">
               <Download size={15} /> {t("hero", "downloadBtn")}
             </a>
           </motion.div>
@@ -61,10 +60,6 @@ export default function Hero({ profile }: { profile: Profile }) {
                 <span className="hidden sm:inline">{label}</span>
               </a>
             ))}
-            <span className="flex items-center gap-1.5 px-3 py-2 rounded-xl glass border border-white/10 text-slate-500 text-xs">
-              <MapPin size={13} />
-              <span className="hidden sm:inline">{profile.location}</span>
-            </span>
           </motion.div>
         </div>
       </div>

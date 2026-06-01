@@ -9,6 +9,7 @@ const translations = {
       projects: "Proyek",
       publications: "Publikasi",
       education: "Pendidikan",
+      otherPortfolio: "Portofolio Lain",
       adminGateway: "Admin Gateway",
       logout: "Logout",
     },
@@ -34,6 +35,8 @@ const translations = {
       certsDesc: "Sertifikasi profesional yang memvalidasi kompetensi teknis.",
       eduTitle: "Pendidikan",
       eduDesc: "Latar belakang akademis di bidang Sistem Informasi.",
+      otherPortfolioTitle: "Portofolio Lain",
+      otherPortfolioDesc: "Proyek lain yang dapat diakses secara publik.",
     },
     project: {
       viewArch: "Lihat Arsitektur",
@@ -92,6 +95,7 @@ const translations = {
       projects: "Projects",
       publications: "Publications",
       education: "Education",
+      otherPortfolio: "Other Portfolio",
       adminGateway: "Admin Gateway",
       logout: "Logout",
     },
@@ -117,6 +121,8 @@ const translations = {
       certsDesc: "Professional certifications validating technical competencies.",
       eduTitle: "Education",
       eduDesc: "Academic background in Information Systems.",
+      otherPortfolioTitle: "Other Portfolio",
+      otherPortfolioDesc: "Other projects accessible publicly.",
     },
     project: {
       viewArch: "View Architecture",

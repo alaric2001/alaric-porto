@@ -6,6 +6,7 @@ import Dokumentasi from "@/app/components/Dokumentasi";
 import Publications from "@/app/components/Publications";
 import Certifications from "@/app/components/Certifications";
 import EducationSection from "@/app/components/Education";
+import OtherPortfolio from "@/app/components/OtherPortfolio";
 import AIChatWidget from "@/app/components/AIChatWidget";
 import { portfolioData } from "@/app/lib/data";
 import { Github, Linkedin, Gitlab } from "lucide-react";
@@ -25,6 +26,7 @@ export default async function HomePage() {
           <Publications key="pubs" publications={data.publications} />,
           <Certifications key="certs" certifications={data.certifications} />,
           <EducationSection key="edu" education={data.education} />,
+          <OtherPortfolio key="other" />,
         ].map((section, i) => (
           <div key={i}>
             <div className="max-w-6xl mx-auto">
