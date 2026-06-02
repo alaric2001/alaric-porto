@@ -377,38 +377,51 @@ export const portfolioData: PortfolioData = {
   publications: [
     {
       id: "pub-1",
-      title: "User Experience Development in Elderly Heart Patient Monitoring System",
-      journal: "Jurnal Nasional Teknik Elektro dan Teknologi Informasi",
+      title: "Python-Based Backend Architecture Design for Commercial Medical IoT Device Integration: A Case Study of Omron HEM-7142T1",
+      journal: "Indonesian Journal of Electronics, Electromedical Engineering, and Medical Informatics",
       year: 2025,
       indexing: "Sinta 2",
+      url: "https://ijeeemi.org/index.php/ijeeemi/article/view/331",
     },
     {
       id: "pub-2",
+      title: "User Experience Development in Elderly Heart Patient Monitoring System",
+      journal: "Jurnal Nasional Teknik Elektro dan Teknologi Informasi (JNTETI) — UGM",
+      year: 2025,
+      indexing: "Sinta 2",
+      url: "https://journal.ugm.ac.id/v3/JNTETI/article/view/18783",
+    },
+    {
+      id: "pub-3",
       title: "A Systematic Review of Smart Grid Information Systems for Integrating Renewable Energy in Urban Environments",
       journal: "2025 International Electronics Symposium (IES)",
       year: 2025,
       indexing: "IEEE Scopus",
+      url: "https://ieeexplore.ieee.org/document/11160915",
     },
     {
-      id: "pub-3",
+      id: "pub-4",
       title: "Examining the Role of Fintech Adoption in Driving Growth and Innovation in the Halal Economy: A Systematic Review",
       journal: "2024 International Conference on ICT for Smart Society (ICISS)",
       year: 2024,
       indexing: "IEEE Scopus",
+      url: "https://ieeexplore.ieee.org/document/10751516",
     },
     {
-      id: "pub-4",
+      id: "pub-5",
       title: "Application of User Experience Method to Determine User Requirements in Remote Patient Monitoring Systems: Systematic Literature Review",
       journal: "2024 International Conference on ICT for Smart Society (ICISS)",
       year: 2024,
       indexing: "IEEE Scopus",
+      url: "https://ieeexplore.ieee.org/document/10751221",
     },
     {
-      id: "pub-5",
+      id: "pub-6",
       title: "Use of the Usability Scale System as a Monitoring Dashboard Test for Inpatient Covid-19 Patients in Hospitals",
       journal: "2024 3rd International Conference for Innovation in Technology (INOCON)",
       year: 2024,
       indexing: "IEEE Scopus",
+      url: "https://ieeexplore.ieee.org/document/10511499",
     },
   ],
 
@@ -426,18 +439,6 @@ export const portfolioData: PortfolioData = {
       badge: "AI",
     },
     {
-      id: "cert-bnsp",
-      title: "Web Developer",
-      issuer: "BNSP / Lembaga Sertifikasi Profesi",
-      date: "Desember 2022",
-      description:
-        "Sertifikasi profesional Web Developer dari BNSP yang mengakui kompetensi pengembangan aplikasi web sesuai standar nasional Indonesia.",
-      descriptionEn:
-        "Professional Web Developer certification from BNSP (National Professional Certification Board), validating web development competencies against Indonesian national standards.",
-      credentialUrl: "https://drive.google.com/drive/u/1/folders/1cF__vU6buQV8wLu8hd_SB_ecxSDPbEOA",
-      badge: "BNSP",
-    },
-    {
       id: "cert-react",
       title: "React Js Web Frontend",
       issuer: "Sanbercode Bootcamp",
@@ -448,6 +449,18 @@ export const portfolioData: PortfolioData = {
         "Intensive modern frontend development training using React.js, covering hooks, state management, and REST API integration.",
       credentialUrl: "https://drive.google.com/drive/u/1/folders/1cF__vU6buQV8wLu8hd_SB_ecxSDPbEOA",
       badge: "React",
+    },
+    {
+      id: "cert-bnsp",
+      title: "Web Developer",
+      issuer: "BNSP / Lembaga Sertifikasi Profesi",
+      date: "Desember 2022",
+      description:
+        "Sertifikasi profesional Web Developer dari BNSP yang mengakui kompetensi pengembangan aplikasi web sesuai standar nasional Indonesia.",
+      descriptionEn:
+        "Professional Web Developer certification from BNSP (National Professional Certification Board), validating web development competencies against Indonesian national standards.",
+      credentialUrl: "https://drive.google.com/drive/u/1/folders/1cF__vU6buQV8wLu8hd_SB_ecxSDPbEOA",
+      badge: "BNSP",
     },
     {
       id: "cert-fullstack",

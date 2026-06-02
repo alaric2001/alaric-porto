@@ -96,8 +96,8 @@ function generateGeneralResponse(message: string, lang: string): string {
   }
 
   return isEn
-    ? `Hello! I'm the AI assistant for **Alaric Rasendriya Aniko's** portfolio — powered by IBM Granite simulation.\n\nI can help you:\n- 👤 Learn about Alaric's profile and experience\n- 🛠️ Explore his tech stack and skills\n- 📁 Get project architecture details\n- 📚 View academic publications\n- 📦 Simulate package tracking (try sending a tracking number!)\n\nWhat would you like to know?`
-    : `Halo! Saya asisten AI portofolio **Alaric Rasendriya Aniko** — disimulasikan dengan IBM Granite.\n\nSaya bisa membantu:\n- 👤 Mengenal profil dan pengalaman Alaric\n- 🛠️ Eksplorasi tech stack dan keahlian\n- 📁 Detail arsitektur proyek\n- 📚 Informasi publikasi ilmiah\n- 📦 Simulasi cek resi (coba kirim nomor resi!)\n\nApa yang ingin Anda ketahui?`;
+    ? `Hello! I'm the AI assistant for **Alaric Rasendriya Aniko's** portfolio — powered by IBM Granite simulation.\n\nI can help you:\n- 👤 Learn about Alaric's profile and experience\n- 🛠️ Explore his tech stack and skills\n- 📁 Get project architecture details\n- 📚 View academic publications\n- \n\nWhat would you like to know?`
+    : `Halo! Saya asisten AI portofolio **Alaric Rasendriya Aniko** — disimulasikan dengan IBM Granite.\n\nSaya bisa membantu:\n- 👤 Mengenal profil dan pengalaman Alaric\n- 🛠️ Eksplorasi tech stack dan keahlian\n- 📁 Detail arsitektur proyek\n- 📚 Informasi publikasi ilmiah\n- \n\nApa yang ingin Anda ketahui?`;
 }
 
 export async function POST(request: NextRequest) {

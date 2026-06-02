@@ -96,7 +96,7 @@ export default function Dokumentasi({ projects, architectures }: Props) {
                     <p className="text-xs text-slate-400 mt-0.5">{lang === "en" ? arch.descriptionEn : arch.description}</p>
                   </div>
                 </div>
-                <button onClick={() => setActiveDoc(null)} className="flex-shrink-0 w-8 h-8 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all"><X size={15} /></button>
+                <button onClick={() => setActiveDoc(null)} className="flex-shrink-0 w-8 h-8 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 hover:text-red-300 hover:bg-red-500/20 transition-all"><X size={15} /></button>
               </div>
 
               <div className="overflow-y-auto custom-scrollbar flex-1 p-5 sm:p-6 space-y-6">
@@ -143,9 +143,9 @@ export default function Dokumentasi({ projects, architectures }: Props) {
 
               <div className="flex items-center justify-between p-4 border-t border-white/10 flex-shrink-0">
                 <span className="flex items-center gap-1.5 text-xs text-slate-500"><BookOpen size={11} />{t("project", "fullDocs")}</span>
-                <button onClick={() => setActiveDoc(null)} className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-medium bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white transition-all">
+                {/* <button onClick={() => setActiveDoc(null)} className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-medium bg-slate-800 border border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white transition-all">
                   {t("project", "close")}<ArrowRight size={12} />
-                </button>
+                </button> */}
               </div>
             </motion.div>
           </motion.div>

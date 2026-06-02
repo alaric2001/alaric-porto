@@ -76,7 +76,6 @@ export default function AIChatWidget() {
     t("chat", "suggestWho"),
     t("chat", "suggestSkills"),
     t("chat", "suggestProject"),
-    t("chat", "suggestTracking"),
   ];
 
   return (
@@ -89,9 +88,9 @@ export default function AIChatWidget() {
           {isOpen
             ? <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}><ChevronDown size={20} /></motion.div>
             : <motion.div key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }} className="relative">
-                <Bot size={22} />
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-slate-900 animate-pulse" />
-              </motion.div>
+              <Bot size={22} />
+              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-slate-900 animate-pulse" />
+            </motion.div>
           }
         </AnimatePresence>
       </motion.button>
@@ -116,9 +115,9 @@ export default function AIChatWidget() {
                   {msg.role === "assistant" && <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-600 to-violet-600 flex items-center justify-center flex-shrink-0 mr-2 mt-0.5"><Bot size={11} className="text-white" /></div>}
                   <div className={`max-w-[80%] rounded-2xl px-3 py-2.5 ${msg.role === "user" ? "bg-gradient-to-br from-blue-600 to-violet-600 text-white rounded-tr-sm" : "bg-white/8 backdrop-blur-sm border border-white/10 rounded-tl-sm"}`}>
                     {msg.isTyping
-                      ? <div className="flex items-center gap-1 py-1 px-1">{[0,1,2].map((d) => <div key={d} className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce" style={{ animationDelay: `${d * 0.15}s` }} />)}</div>
+                      ? <div className="flex items-center gap-1 py-1 px-1">{[0, 1, 2].map((d) => <div key={d} className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce" style={{ animationDelay: `${d * 0.15}s` }} />)}</div>
                       : msg.role === "user" ? <p className="text-xs text-white">{msg.content}</p>
-                      : <div className="space-y-0.5">{renderMarkdown(msg.content)}</div>
+                        : <div className="space-y-0.5">{renderMarkdown(msg.content)}</div>
                     }
                   </div>
                 </div>
