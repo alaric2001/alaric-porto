@@ -56,7 +56,7 @@ export default function Navbar() {
             <LangToggle />
             <ThemeToggle />
 
-            {isAdmin ? (
+            {/* {isAdmin ? (
               <div className="flex items-center gap-2">
                 <span className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium">
                   <Shield size={12} /> Admin
@@ -71,7 +71,7 @@ export default function Navbar() {
                 <Lock size={13} />
                 <span className="hidden sm:inline">{t("nav", "adminGateway")}</span>
               </Link>
-            )}
+            )} */}
 
             <button className="md:hidden flex items-center justify-center w-9 h-9 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition-all" onClick={() => setMobileOpen((v) => !v)}>
               {mobileOpen ? <X size={16} /> : <Menu size={16} />}
@@ -89,11 +89,11 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
-            {!isAdmin && (
+            {/* {!isAdmin && (
               <Link href="/admin" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 w-full px-4 py-3 rounded-xl text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-all">
                 <Lock size={14} /> {t("nav", "adminGateway")}
               </Link>
-            )}
+            )} */}
           </nav>
         </div>
       )}

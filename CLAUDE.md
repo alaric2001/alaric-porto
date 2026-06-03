@@ -21,12 +21,26 @@ app/
 ├── globals.css           # Tailwind base + CSS variables (dark/light tokens) + light mode overrides
 ├── icon.tsx              # Auto-generated favicon (32×32, "AR" monogram)
 ├── apple-icon.tsx        # Apple touch icon (180×180)
-├── admin/page.tsx        # Admin login page (RBAC demo)
+├── admin/page.tsx        # Admin login page (RBAC demo) - sementara tidak digunakan
 ├── api/
 │   ├── ai-chat/route.ts  # AI chat POST — IBM Granite simulation, regex entity extraction
 │   ├── auth/route.ts     # POST login / DELETE logout → sets portfolio_role HTTP-only cookie
 │   └── profile/route.ts  # GET profile data (SSR backup)
 ├── components/           # All UI components (Client Components)
+│   ├── Navbar.tsx        # Top nav with lang/theme toggles + auth state
+│   ├── Hero.tsx          # Landing section: photo, name, social links, CV download
+│   ├── Skills.tsx        # Technical skills grid
+│   ├── Experience.tsx    # Work experience timeline
+│   ├── Dokumentasi.tsx   # Projects cards + architecture modal (AnimatePresence)
+│   ├── Publications.tsx  # Academic publications list with external URLs
+│   ├── Certifications.tsx# Certifications sorted by newest date
+│   ├── Education.tsx     # Education background
+│   ├── OtherPortfolio.tsx# External project links (clickable motion.a cards)
+│   ├── AIChatWidget.tsx  # Floating AI chat (IBM Granite simulation)
+│   ├── AuthProvider.tsx  # Role state in localStorage + React Context
+│   ├── LangProvider.tsx  # ID/EN lang toggle via React Context + Reducer
+│   ├── LangToggle.tsx    # Language switcher button
+│   └── ThemeToggle.tsx   # Dark/light mode button
 ├── lib/
 │   ├── data.ts           # Single source of truth — all portfolio content + bilingual fields
 │   └── translations.ts   # ID/EN translation strings (as const)
@@ -53,6 +67,15 @@ Dark/light mode via `next-themes` + Tailwind `darkMode: "class"`. CSS custom pro
 ### AI Chat
 `/api/ai-chat` route simulates IBM Granite agentic behavior: regex entity extraction for tracking numbers (`/([A-Z]{2,3}\d{8,14})/g`) and phone numbers, bilingual responses based on `lang` param.
 
+### Icons
+- Use `lucide-react` for all UI icons (pinned v0.468.0 — has Linkedin/Github/Gitlab)
+- Brand icons not in lucide-react (e.g. WhatsApp) use inline SVG components defined at the top of the file — do NOT add CDN links or new icon libraries
+
+### CV / Static Assets
+- Static files in `public/` are served at root path by Next.js (e.g. `public/foo.pdf` → `/foo.pdf`)
+- CV download button in `Hero.tsx` uses `href="/Alaric_curriculum vitae_2026_.pdf"` + HTML `download` attribute — triggers browser download, not tab open
+- Profile photo: `public/Alaric casual.png`, rendered via `next/image` in `Hero.tsx`
+
 ## Styling Rules
 - Utility classes: `.glass`, `.glass-card`, `.gradient-text`, `.badge-*`, `.section-padding` defined in `globals.css`
 - Colors: blue-600/violet-600 gradient as primary accent throughout
@@ -63,6 +86,8 @@ Dark/light mode via `next-themes` + Tailwind `darkMode: "class"`. CSS custom pro
 To add a new project: update `portfolioData.projects` in `data.ts` and add architecture data in `portfolioData.architectures` using the same key.
 
 To add a new section: create component in `components/`, add nav link to `Navbar.tsx` NAV_LINKS, add translations to `translations.ts` (both `id` and `en` blocks), import and add to `page.tsx` section array.
+
+To add a new publication: add entry to `portfolioData.publications` in `data.ts` with `url` field. Certifications are ordered newest-first by date in `data.ts`.
 
 ## Deployment
 - **Platform**: Google Cloud Run (asia-southeast2)
