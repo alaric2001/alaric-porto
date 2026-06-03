@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Award, ExternalLink, Calendar } from "lucide-react";
 import type { Certification } from "@/app/types";
 import { useLang } from "./LangProvider";
+import { useAchievement } from "./AchievementProvider";
 
 const BADGE_COLORS: Record<string, string> = {
   AI: "from-violet-600 to-purple-700", BNSP: "from-emerald-600 to-teal-700",
@@ -12,6 +13,7 @@ const BADGE_COLORS: Record<string, string> = {
 
 export default function Certifications({ certifications }: { certifications: Certification[] }) {
   const { lang, t } = useLang();
+  const { unlock } = useAchievement();
   return (
     <section id="certifications" className="section-padding max-w-6xl mx-auto">
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
@@ -35,7 +37,7 @@ export default function Certifications({ certifications }: { certifications: Cer
               <div className="flex items-center justify-between">
                 <span className="flex items-center gap-1 text-xs text-slate-500"><Calendar size={11} />{cert.date}</span>
                 {cert.credentialUrl && (
-                  <a href={cert.credentialUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-xs text-slate-500 hover:text-blue-400 transition-colors">
+                  <a href={cert.credentialUrl} target="_blank" rel="noopener noreferrer" onClick={() => unlock("verified")} className="flex items-center gap-1 text-xs text-slate-500 hover:text-blue-400 transition-colors">
                     <ExternalLink size={12} />{t("cert", "verifyLink")}
                   </a>
                 )}

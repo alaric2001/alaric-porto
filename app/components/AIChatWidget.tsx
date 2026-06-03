@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Bot, X, Send, Sparkles, ChevronDown } from "lucide-react";
 import type { ChatMessage } from "@/app/types";
 import { useLang } from "./LangProvider";
+import { useAchievement } from "./AchievementProvider";
 
 function renderMarkdown(text: string) {
   return text.split("\n").map((line, i) => {
@@ -26,6 +27,7 @@ function renderInline(text: string) {
 
 export default function AIChatWidget() {
   const { lang, t } = useLang();
+  const { unlock } = useAchievement();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
@@ -52,6 +54,8 @@ export default function AIChatWidget() {
     const trimmed = text.trim();
     if (!trimmed || isLoading) return;
 
+    unlock("prompt_engineer");
+
     const userMsg: ChatMessage = { id: `user-${Date.now()}`, role: "user", content: trimmed, timestamp: new Date() };
     setMessages((prev) => [...prev, userMsg, { id: "typing", role: "assistant", content: "", timestamp: new Date(), isTyping: true }]);
     setInput("");
@@ -70,7 +74,7 @@ export default function AIChatWidget() {
     } finally {
       setIsLoading(false);
     }
-  }, [isLoading, lang]);
+  }, [isLoading, lang, unlock]);
 
   const QUICK_PROMPTS = [
     t("chat", "suggestWho"),
@@ -80,7 +84,7 @@ export default function AIChatWidget() {
 
   return (
     <>
-      <motion.button initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 1.5, type: "spring", stiffness: 200 }} onClick={() => setIsOpen((v) => !v)} style={{ width: 52, height: 52 }}
+      <motion.button initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 1.5, type: "spring", stiffness: 200 }} onClick={() => { if (!isOpen) unlock("conversationist"); setIsOpen((v) => !v); }} style={{ width: 52, height: 52 }}
         className={`fixed bottom-5 right-5 z-40 rounded-2xl flex items-center justify-center shadow-2xl transition-all duration-300 ${isOpen ? "bg-slate-800 border border-white/10 text-slate-300" : "bg-gradient-to-br from-blue-600 to-violet-600 text-white glow-blue"}`}
         aria-label={isOpen ? "Close chat" : "Open AI Assistant"}
       >

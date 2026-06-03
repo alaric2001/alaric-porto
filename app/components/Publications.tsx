@@ -1,9 +1,11 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, ExternalLink, Award } from "lucide-react";
 import type { Publication } from "@/app/types";
 import { useLang } from "./LangProvider";
+import { useAchievement } from "./AchievementProvider";
 
 const INDEXING_BADGE: Record<string, { bg: string; text: string; border: string }> = {
   "IEEE Scopus": { bg: "bg-blue-500/15", text: "text-blue-300", border: "border-blue-500/25" },
@@ -12,8 +14,27 @@ const INDEXING_BADGE: Record<string, { bg: string; text: string; border: string 
 
 export default function Publications({ publications }: { publications: Publication[] }) {
   const { t } = useLang();
+  const { unlock } = useAchievement();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          unlock("scholar");
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [unlock]);
+
   return (
-    <section id="publications" className="section-padding max-w-6xl mx-auto">
+    <section id="publications" ref={sectionRef} className="section-padding max-w-6xl mx-auto">
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{t("sections", "publicationsTitle")}</h2>
         <p className="text-slate-400 mb-4">{t("sections", "publicationsDesc")}</p>

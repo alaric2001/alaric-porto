@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { AuthProvider } from "@/app/components/AuthProvider";
 import { LangProvider } from "@/app/components/LangProvider";
+import AchievementProvider from "@/app/components/AchievementProvider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -27,7 +28,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <AuthProvider>
             <LangProvider>
-              {children}
+              <AchievementProvider>
+                {children}
+              </AchievementProvider>
             </LangProvider>
           </AuthProvider>
         </ThemeProvider>
