@@ -435,7 +435,7 @@ export const portfolioData: PortfolioData = {
         "Sertifikasi dalam pembuatan dan optimasi kode menggunakan model AI IBM Granite untuk meningkatkan produktivitas pengembangan perangkat lunak.",
       descriptionEn:
         "Certification in code generation and optimization using IBM Granite AI model to improve software development productivity.",
-      credentialUrl: "https://drive.google.com/drive/u/1/folders/1cF__vU6buQV8wLu8hd_SB_ecxSDPbEOA",
+      credentialUrl: "https://www.credly.com/badges/a8e8939b-b76b-4713-b567-97586c065172",
       badge: "AI",
     },
     {
@@ -447,7 +447,7 @@ export const portfolioData: PortfolioData = {
         "Pelatihan intensif pengembangan frontend modern menggunakan React.js, mencakup hooks, state management, dan integrasi REST API.",
       descriptionEn:
         "Intensive modern frontend development training using React.js, covering hooks, state management, and REST API integration.",
-      credentialUrl: "https://drive.google.com/drive/u/1/folders/1cF__vU6buQV8wLu8hd_SB_ecxSDPbEOA",
+      credentialUrl: "https://drive.google.com/file/d/1xgj9dsGqD224Ma8UnNoynRU9TY6q0x7u/view?usp=sharinghttps://sanbercode.com/sertifikat/generate/96e519fe-58d4-4c9a-8d44-27ee25988bcd",
       badge: "React",
     },
     {
@@ -459,7 +459,7 @@ export const portfolioData: PortfolioData = {
         "Sertifikasi profesional Web Developer dari BNSP yang mengakui kompetensi pengembangan aplikasi web sesuai standar nasional Indonesia.",
       descriptionEn:
         "Professional Web Developer certification from BNSP (National Professional Certification Board), validating web development competencies against Indonesian national standards.",
-      credentialUrl: "https://drive.google.com/drive/u/1/folders/1cF__vU6buQV8wLu8hd_SB_ecxSDPbEOA",
+      credentialUrl: "https://drive.google.com/file/d/18cVRgcWPIEUPOzwLwLZFQog3rb3wlUV2/view?usp=sharing",
       badge: "BNSP",
     },
     {
@@ -471,7 +471,7 @@ export const portfolioData: PortfolioData = {
         "Kursus fullstack pengembangan aplikasi web menggunakan Laravel sebagai backend REST API dan React.js sebagai frontend.",
       descriptionEn:
         "Fullstack web development course using Laravel as a REST API backend and React.js as the frontend.",
-      credentialUrl: "https://drive.google.com/drive/u/1/folders/1cF__vU6buQV8wLu8hd_SB_ecxSDPbEOA",
+      credentialUrl: "https://drive.google.com/file/d/16WlxW6OUJleoj0MSbTFS9lS1BGr3B8nD/view?usp=sharing",
       badge: "Fullstack",
     },
     {
@@ -483,7 +483,7 @@ export const portfolioData: PortfolioData = {
         "Pelatihan pengembangan web menggunakan framework Laravel, mencakup MVC pattern, Eloquent ORM, authentication, dan deployment.",
       descriptionEn:
         "Web development training using the Laravel framework, covering MVC pattern, Eloquent ORM, authentication, and deployment.",
-      credentialUrl: "https://drive.google.com/drive/u/1/folders/1cF__vU6buQV8wLu8hd_SB_ecxSDPbEOA",
+      credentialUrl: "https://drive.google.com/file/d/1ur5w01Og2P52BKPIzcs3G0wPRv7vnJy5/view?usp=sharing",
       badge: "Laravel",
     },
   ],

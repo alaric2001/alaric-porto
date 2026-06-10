@@ -27,7 +27,8 @@ export default function Navbar() {
     { label: t("nav", "projects"), href: "#projects" },
     { label: t("nav", "publications"), href: "#publications" },
     { label: t("nav", "education"), href: "#education" },
-    { label: t("nav", "otherPortfolio"), href: "#other-portfolio" },
+    { label: t("nav", "certifications"), href: "#certifications" },
+    // { label: t("nav", "otherPortfolio"), href: "#other-portfolio" },
   ];
 
   const handleNav = (href: string) => {
