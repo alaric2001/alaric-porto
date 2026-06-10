@@ -7,7 +7,7 @@ export const portfolioData: PortfolioData = {
     phone: "+6281290482972",
     email: "alaric2001ra@gmail.com",
     summary:
-      "Fullstack Developer adaptif dengan latar belakang pendidikan S2 Sistem Informasi. Memiliki keahlian mendalam dalam pengembangan aplikasi web dan mobile menggunakan ekosistem JavaScript (React.js, Node.js) dan PHP (Laravel). Berpengalaman dalam membangun solusi digital mulai dari platform e-commerce hingga dashboard monitoring kesehatan berskala riset universitas.",
+      "Fullstack Developer adaptif dengan latar belakang pendidikan S1 Sistem Informasi. Memiliki keahlian mendalam dalam pengembangan aplikasi web dan mobile menggunakan ekosistem JavaScript (React.js, Node.js) dan PHP (Laravel). Berpengalaman dalam membangun solusi digital mulai dari platform e-commerce hingga dashboard monitoring kesehatan berskala riset universitas.",
     summaryEn:
       "Adaptive Fullstack Developer with an M.Sc. background in Information Systems. Proficient in JavaScript (React.js, Node.js) and PHP (Laravel) ecosystems. Experienced in building digital solutions ranging from e-commerce platforms to university-scale health monitoring dashboards backed by peer-reviewed research.",
     links: {
@@ -489,15 +489,15 @@ export const portfolioData: PortfolioData = {
   ],
 
   education: [
-    {
-      id: "edu-s2",
-      degree: "Magister (S2) Sistem Informasi",
-      degreeEn: "Master of Science — Information Systems",
-      institution: "Telkom University",
-      location: "Bandung, Jawa Barat",
-      period: "2023 – 2026",
-      gpa: "3.61 / 4.00",
-    },
+    // {
+    //   id: "edu-s2",
+    //   degree: "Magister (S2) Sistem Informasi",
+    //   degreeEn: "Master of Science — Information Systems",
+    //   institution: "Telkom University",
+    //   location: "Bandung, Jawa Barat",
+    //   period: "2023 – 2026",
+    //   gpa: "3.61 / 4.00",
+    // },
     {
       id: "edu-s1",
       degree: "Sarjana (S1) Sistem Informasi",
