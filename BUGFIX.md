@@ -124,7 +124,7 @@ const data = translations[lang] as TranslationDict;
 ```
 TypeError: result is not iterable
 ```
-Terjadi di route `/api/ai-chat` saat mencoba ekstrak nomor resi dari pesan user.
+Terjadi di route `/api/ai-chat` saat mencoba ekstrak dari pesan user.
 
 **Penyebab:**
 `String.prototype.matchAll()` mengembalikan `RegExpStringIterator` yang tidak bisa langsung di-spread atau di-`Array.from` di semua environment runtime Next.js.

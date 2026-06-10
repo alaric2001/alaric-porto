@@ -12,7 +12,7 @@ Website portofolio pribadi yang dibangun dengan **Next.js 15 App Router**, TypeS
 
 - **Bilingual (ID / EN)** — toggle bahasa penuh dengan React Context + Reducer
 - **Dark / Light mode** — next-themes + sistem CSS variable token
-- **AI Chat Widget** — simulasi IBM Granite dengan ekstraksi entitas (nomor resi, nomor telepon)
+- **AI Chat Widget** — simulasi IBM Granite dengan ekstraksi entitas
 - **Modal Arsitektur Teknis** — dokumentasi mendalam untuk setiap proyek
 - **SSR** — pemuatan data Server Component, tanpa fetch waterfall di sisi klien
 - **Progressive Web App** — meta PWA, apple-icon, favicon via Next.js image generation
