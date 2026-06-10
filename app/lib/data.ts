@@ -9,7 +9,7 @@ export const portfolioData: PortfolioData = {
     summary:
       "Fullstack Developer adaptif dengan latar belakang pendidikan S1 Sistem Informasi. Memiliki keahlian mendalam dalam pengembangan aplikasi web dan mobile menggunakan ekosistem JavaScript (React.js, Node.js) dan PHP (Laravel). Berpengalaman dalam membangun solusi digital mulai dari platform e-commerce hingga dashboard monitoring kesehatan berskala riset universitas.",
     summaryEn:
-      "Adaptive Fullstack Developer with an M.Sc. background in Information Systems. Proficient in JavaScript (React.js, Node.js) and PHP (Laravel) ecosystems. Experienced in building digital solutions ranging from e-commerce platforms to university-scale health monitoring dashboards backed by peer-reviewed research.",
+      "Adaptive Fullstack Developer with an Bachelor of Computer. background in Information Systems. Proficient in JavaScript (React.js, Node.js) and PHP (Laravel) ecosystems. Experienced in building digital solutions ranging from e-commerce platforms to university-scale health monitoring dashboards backed by peer-reviewed research.",
     links: {
       linkedin: "https://linkedin.com/in/alaric01",
       github: "https://github.com/alaric2001",
@@ -492,7 +492,7 @@ export const portfolioData: PortfolioData = {
     // {
     //   id: "edu-s2",
     //   degree: "Magister (S2) Sistem Informasi",
-    //   degreeEn: "Master of Science — Information Systems",
+    //   degreeEn: "Master of Computer",
     //   institution: "Telkom University",
     //   location: "Bandung, Jawa Barat",
     //   period: "2023 – 2026",
@@ -501,7 +501,7 @@ export const portfolioData: PortfolioData = {
     {
       id: "edu-s1",
       degree: "Sarjana (S1) Sistem Informasi",
-      degreeEn: "Bachelor of Science — Information Systems",
+      degreeEn: "Bachelor of Computer",
       institution: "Telkom University",
       location: "Bandung, Jawa Barat",
       period: "2019 – 2023",
